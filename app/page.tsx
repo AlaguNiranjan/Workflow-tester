@@ -54,7 +54,7 @@ export default function Home() {
       {/* HEADER */}
       <header className="absolute inset-x-0 top-0 z-20 border-b border-white/10 py-4 md:py-6">
         <div className="flex items-center justify-center">
-          <span className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold tracking-wider text-white sm:text-2xl md:text-3xl">
+          <span className="font-[family-name:var(--font-jetbrains-mono)] text-xl font-semibold tracking-tight text-white sm:text-2xl md:text-3xl">
             FlowFox
           </span>
         </div>
@@ -73,7 +73,7 @@ export default function Home() {
             Now in Early Access
           </Badge>
 
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="font-[family-name:var(--font-jetbrains-mono)] text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             <span className="text-white">AI Code Review for</span>
             <br />
             <span className="text-gray-400">
@@ -116,7 +116,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-12 text-center">
             <p className="mb-2 text-xs uppercase tracking-[0.2em] text-gray-600">The Problem</p>
-            <h2 className="text-3xl font-bold text-white md:text-4xl">
+            <h2 className="font-[family-name:var(--font-jetbrains-mono)] text-3xl font-bold text-white md:text-4xl">
               Automation Workflows Aren&apos;t Code-Reviewed
             </h2>
           </div>
@@ -160,7 +160,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-12 text-center">
             <p className="mb-2 text-xs uppercase tracking-[0.2em] text-gray-600">The Solution</p>
-            <h2 className="text-3xl font-bold text-white md:text-4xl">
+            <h2 className="font-[family-name:var(--font-jetbrains-mono)] text-3xl font-bold text-white md:text-4xl">
               How FlowFox Reviews Your Automations
             </h2>
           </div>
@@ -207,7 +207,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <p className="mb-2 text-xs uppercase tracking-[0.2em] text-gray-600">Features</p>
-            <h2 className="text-3xl font-bold text-white md:text-4xl">
+            <h2 className="font-[family-name:var(--font-jetbrains-mono)] text-3xl font-bold text-white md:text-4xl">
               Everything You Need for Reliable Workflows
             </h2>
           </div>
@@ -287,7 +287,7 @@ export default function Home() {
         <div className="mx-auto max-w-3xl">
           <div className="mb-12 text-center">
             <p className="mb-2 text-xs uppercase tracking-[0.2em] text-gray-600">Comparison</p>
-            <h2 className="text-3xl font-bold text-white md:text-4xl">
+            <h2 className="font-[family-name:var(--font-jetbrains-mono)] text-3xl font-bold text-white md:text-4xl">
               FlowFox vs Manual Reviews
             </h2>
           </div>
@@ -368,7 +368,7 @@ export default function Home() {
       {/* FINAL CTA */}
       <section className="relative z-10 border-t border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent px-6 py-20 md:py-28">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+          <h2 className="font-[family-name:var(--font-jetbrains-mono)] mb-4 text-3xl font-bold text-white md:text-4xl">
             Start Reviewing Workflows Today
           </h2>
           <p className="mb-8 text-base text-gray-400">
@@ -382,12 +382,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="relative z-10 border-t border-white/5 px-6 py-8">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 md:flex-row">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white">
-              <Zap className="h-4 w-4 text-black" />
-            </div>
-            <span className="text-lg font-semibold text-white">FlowFox</span>
-          </div>
+          <span className="font-[family-name:var(--font-jetbrains-mono)] text-lg font-semibold text-white">FlowFox</span>
           <div className="flex gap-6 text-sm text-gray-500">
             <span className="cursor-pointer transition-colors hover:text-white">Privacy</span>
             <span className="cursor-pointer transition-colors hover:text-white">Terms</span>

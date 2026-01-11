@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Loader2, Check, AlertCircle } from 'lucide-react'
+import { Loader2, CircleCheck, AlertCircle } from 'lucide-react'
 import {
     Select,
     SelectContent,
@@ -63,8 +63,7 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                 .from('waitlist')
                 .insert([
                     {
-                        email: email.toLowerCase().trim(),
-                        tool: tool || null
+                        email: email.toLowerCase().trim()
                     }
                 ])
 
@@ -155,7 +154,7 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                         type="submit"
                         disabled={formState === 'loading' || formState === 'success'}
                         className={`relative h-11 w-full overflow-hidden rounded-lg px-4 text-xs font-medium transition-all duration-300 sm:h-12 sm:w-auto sm:px-6 sm:text-sm ${formState === 'success'
-                            ? 'bg-gray-700 text-white'
+                            ? 'bg-gray-800 text-white border border-white/10'
                             : 'bg-white text-black hover:bg-gray-200'
                             }`}
                     >
@@ -167,8 +166,8 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                         )}
                         {formState === 'success' && (
                             <span className="flex items-center gap-2">
-                                <Check className="h-4 w-4 animate-[check-pop_0.4s_ease-out]" />
-                                <span>You&apos;re on the list!</span>
+                                <CircleCheck className="h-5 w-5 text-white animate-[check-pop_0.4s_ease-out]" />
+                                <span className="text-white">You&apos;re on the list!</span>
                             </span>
                         )}
                         {(formState === 'error' || formState === 'default') && 'Join Waitlist'}
