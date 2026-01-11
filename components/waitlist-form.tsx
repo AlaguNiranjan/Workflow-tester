@@ -123,7 +123,7 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                                 value={email}
                                 onChange={handleEmailChange}
                                 disabled={formState === 'loading' || formState === 'success'}
-                                className="h-12 flex-1 border-0 bg-transparent px-4 text-base text-white placeholder:text-gray-600 focus-visible:ring-0 focus-visible:ring-offset-0 disabled:opacity-50"
+                                className="h-11 flex-1 border-0 bg-transparent px-3 text-sm text-white placeholder:text-gray-600 focus-visible:ring-0 focus-visible:ring-offset-0 disabled:opacity-50 sm:h-12 sm:px-4 sm:text-base"
                             />
 
                             {/* Tool Selection Inside Input */}
@@ -134,8 +134,8 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                                         onValueChange={setTool}
                                         disabled={formState === 'loading' || formState === 'success'}
                                     >
-                                        <SelectTrigger className="h-12 w-auto min-w-[100px] border-0 bg-transparent px-2 text-[11px] text-gray-500 shadow-none hover:text-gray-300 focus:ring-0 focus:ring-offset-0 data-[placeholder]:text-gray-500">
-                                            <SelectValue placeholder="Tool (optional)" />
+                                        <SelectTrigger className="h-11 w-auto min-w-[80px] border-0 bg-transparent px-2 text-[10px] text-gray-500 shadow-none hover:text-gray-300 focus:ring-0 focus:ring-offset-0 data-[placeholder]:text-gray-500 sm:h-12 sm:min-w-[100px] sm:text-[11px]">
+                                            <SelectValue placeholder="Tool" />
                                         </SelectTrigger>
                                         <SelectContent className="bg-[#09090b] border-white/10">
                                             <SelectItem value="make" className="text-white text-xs focus:bg-white/10 focus:text-white">Make</SelectItem>
@@ -154,7 +154,7 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                     <Button
                         type="submit"
                         disabled={formState === 'loading' || formState === 'success'}
-                        className={`h-12 w-full rounded-lg px-6 text-sm font-medium transition-all sm:w-auto ${formState === 'success'
+                        className={`h-11 w-full rounded-lg px-4 text-xs font-medium transition-all sm:h-12 sm:w-auto sm:px-6 sm:text-sm ${formState === 'success'
                             ? 'bg-green-600 text-white hover:bg-green-600'
                             : 'bg-white text-black hover:bg-gray-200'
                             }`}

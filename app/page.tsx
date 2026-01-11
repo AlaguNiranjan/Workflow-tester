@@ -82,9 +82,9 @@ export default function Home() {
       `}</style>
 
       {/* HEADER - Centered App Name */}
-      <header className="absolute inset-x-0 top-0 z-20 border-b border-white/10 py-6">
+      <header className="absolute inset-x-0 top-0 z-20 border-b border-white/10 py-4 md:py-6">
         <div className="flex items-center justify-center">
-          <span className="font-[family-name:var(--font-space-grotesk)] text-2xl font-bold tracking-wider text-white md:text-3xl">FlowGuard</span>
+          <span className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold tracking-wider text-white sm:text-2xl md:text-3xl">FlowGuard</span>
         </div>
       </header>
 
@@ -101,7 +101,7 @@ export default function Home() {
             Early Access 2026
           </Badge>
 
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             <span className="text-white">Stop Debugging.</span>
             <br />
             <span className="text-gray-500">Start Shipping.</span>
@@ -118,7 +118,7 @@ export default function Home() {
             <span
               className="inline-block text-white font-bold"
               style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
-            >500+</span> developers on the waitlist • No spam
+            >500+</span> developers on the waitlist
           </p>
         </div>
       </section>
@@ -129,12 +129,12 @@ export default function Home() {
           <p className="mb-4 text-xs uppercase tracking-[0.2em] text-gray-600">
             Built for teams using
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 md:gap-x-12">
-            <span className="text-2xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 md:text-3xl">n8n</span>
-            <span className="text-2xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 md:text-3xl">Make</span>
-            <span className="text-2xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 md:text-3xl">Zapier</span>
-            <span className="text-2xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 md:text-3xl">Airtable</span>
-            <span className="text-2xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 md:text-3xl">Notion</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:gap-x-8 md:gap-x-12">
+            <span className="text-xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 sm:text-2xl md:text-3xl">n8n</span>
+            <span className="text-xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 sm:text-2xl md:text-3xl">Make</span>
+            <span className="text-xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 sm:text-2xl md:text-3xl">Zapier</span>
+            <span className="text-xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 sm:text-2xl md:text-3xl">Airtable</span>
+            <span className="text-xl font-bold tracking-tight text-white opacity-60 transition-opacity hover:opacity-100 sm:text-2xl md:text-3xl">Notion</span>
           </div>
         </div>
       </section>
@@ -226,23 +226,23 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section className="relative z-10 border-y border-white/5 bg-white/[0.01] px-6 py-8">
-        <div className="mx-auto grid max-w-4xl grid-cols-4 gap-4">
+      <section className="relative z-10 border-y border-white/5 bg-white/[0.01] px-4 py-6 sm:px-6 sm:py-8">
+        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="text-center">
-            <p className="text-2xl font-bold text-white md:text-3xl">20+</p>
-            <p className="mt-0.5 text-xs text-gray-600">Hours saved/mo</p>
+            <p className="text-xl font-bold text-white sm:text-2xl md:text-3xl">20+</p>
+            <p className="mt-0.5 text-[10px] text-gray-600 sm:text-xs">Hours saved/mo</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl font-bold text-white md:text-3xl">99.9%</p>
-            <p className="mt-0.5 text-xs text-gray-600">Detection rate</p>
+            <p className="text-xl font-bold text-white sm:text-2xl md:text-3xl">99.9%</p>
+            <p className="mt-0.5 text-[10px] text-gray-600 sm:text-xs">Detection rate</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl font-bold text-white md:text-3xl">30s</p>
-            <p className="mt-0.5 text-xs text-gray-600">Test time</p>
+            <p className="text-xl font-bold text-white sm:text-2xl md:text-3xl">30s</p>
+            <p className="mt-0.5 text-[10px] text-gray-600 sm:text-xs">Test time</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl font-bold text-white md:text-3xl">500+</p>
-            <p className="mt-0.5 text-xs text-gray-600">On waitlist</p>
+            <p className="text-xl font-bold text-white sm:text-2xl md:text-3xl">500+</p>
+            <p className="mt-0.5 text-[10px] text-gray-600 sm:text-xs">On waitlist</p>
           </div>
         </div>
       </section>
@@ -281,19 +281,19 @@ export default function Home() {
           </div>
 
           {/* Security note */}
-          <div className="mt-6 flex items-center justify-center gap-4 text-xs text-gray-600">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-[10px] text-gray-600 sm:gap-4 sm:text-xs">
             <div className="flex items-center gap-1.5">
-              <Shield className="h-3.5 w-3.5" />
+              <Shield className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
               <span>End-to-end encrypted</span>
             </div>
-            <span className="text-gray-700">•</span>
+            <span className="hidden text-gray-700 sm:inline">•</span>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-3.5 w-3.5" />
+              <CheckCircle2 className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
               <span>No credential storage</span>
             </div>
-            <span className="text-gray-700">•</span>
+            <span className="hidden text-gray-700 sm:inline">•</span>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-3.5 w-3.5" />
+              <CheckCircle2 className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
               <span>GDPR compliant</span>
             </div>
           </div>
