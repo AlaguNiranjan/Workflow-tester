@@ -154,8 +154,8 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                     <Button
                         type="submit"
                         disabled={formState === 'loading' || formState === 'success'}
-                        className={`h-11 w-full rounded-lg px-4 text-xs font-medium transition-all sm:h-12 sm:w-auto sm:px-6 sm:text-sm ${formState === 'success'
-                            ? 'bg-green-600 text-white hover:bg-green-600'
+                        className={`relative h-11 w-full overflow-hidden rounded-lg px-4 text-xs font-medium transition-all duration-300 sm:h-12 sm:w-auto sm:px-6 sm:text-sm ${formState === 'success'
+                            ? 'bg-gray-700 text-white'
                             : 'bg-white text-black hover:bg-gray-200'
                             }`}
                     >
@@ -166,10 +166,10 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                             </>
                         )}
                         {formState === 'success' && (
-                            <>
-                                <Check className="mr-2 h-4 w-4" />
-                                You&apos;re on the list!
-                            </>
+                            <span className="flex items-center gap-2">
+                                <Check className="h-4 w-4 animate-[check-pop_0.4s_ease-out]" />
+                                <span>You&apos;re on the list!</span>
+                            </span>
                         )}
                         {(formState === 'error' || formState === 'default') && 'Join Waitlist'}
                     </Button>

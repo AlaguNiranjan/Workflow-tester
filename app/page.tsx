@@ -101,7 +101,7 @@ export default function Home() {
             Early Access 2026
           </Badge>
 
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
             <span className="text-white">Stop Debugging.</span>
             <br />
             <span className="text-gray-500">Start Shipping.</span>
