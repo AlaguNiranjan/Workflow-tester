@@ -1,9 +1,12 @@
 'use client'
 
+import { useState } from 'react'
+import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { WaitlistForm } from '@/components/waitlist-form'
 import { Spotlight } from '@/components/ui/spotlight'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
   Sparkles,
   Zap,
@@ -49,6 +52,10 @@ export default function Home() {
           0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
           50% { transform: translateY(-20px) rotate(2deg); opacity: 0.25; }
         }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
       `}</style>
 
       {/* HEADER */}
@@ -67,33 +74,67 @@ export default function Home() {
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="white"
         />
-        <div className="mx-auto max-w-5xl text-center">
-          <Badge className="mb-6 gap-1.5 border-white/20 bg-white/5 px-3 py-1.5 text-xs text-gray-300">
-            <Sparkles className="h-3.5 w-3.5" />
-            Now in Early Access
-          </Badge>
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            {/* Left side - Text content */}
+            <div className="text-center lg:text-left">
+              <Badge className="mb-6 gap-1.5 border-white/20 bg-white/5 px-3 py-1.5 text-xs text-gray-300">
+                <Sparkles className="h-3.5 w-3.5" />
+                Now in Early Access
+              </Badge>
 
-          <h1 className="font-[family-name:var(--font-jetbrains-mono)] text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="text-white">AI Code Review for</span>
-            <br />
-            <span className="text-gray-400">
-              Automation Workflows
-            </span>
-          </h1>
+              <h1 className="font-[family-name:var(--font-jetbrains-mono)] text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                <span className="text-white">AI Code Review for</span>
+                <br />
+                <span className="text-gray-400">
+                  Automation Workflows
+                </span>
+              </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm text-gray-400 sm:text-base md:text-lg px-4 sm:px-0">
-            Like CodeRabbit for Make, n8n, and Zapier. Catch bugs before deployment,
-            get AI-powered fixes, and ship with confidence.
-          </p>
+              <p className="mx-auto lg:mx-0 mt-6 max-w-2xl text-sm text-gray-400 sm:text-base md:text-lg px-4 sm:px-0">
+                Like CodeRabbit for Make, n8n, and Zapier. Catch bugs before deployment,
+                get AI-powered fixes, and ship with confidence.
+              </p>
 
-          <WaitlistForm className="max-w-md mx-auto mt-8" showToolSelect={false} />
+              <WaitlistForm className="max-w-md mx-auto lg:mx-0 mt-8" showToolSelect={false} />
 
-          <p className="mt-3 text-sm text-gray-500">
-            <span
-              className="text-white font-semibold inline-block"
-              style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
-            >500+</span> developers on the waitlist
-          </p>
+              <p className="mt-3 text-sm text-gray-500">
+                <span
+                  className="text-white font-semibold inline-block"
+                  style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
+                >500+</span> developers on the waitlist
+              </p>
+            </div>
+
+            {/* Right side - Screenshot (hidden on mobile) */}
+            <div className="hidden lg:block">
+              <div
+                className="relative rounded-2xl border border-white/10 bg-white/5 p-2 shadow-2xl shadow-white/5"
+                style={{ animation: 'float 6s ease-in-out infinite' }}
+              >
+                <Image
+                  src="/screenshots/review-results.png"
+                  alt="AI workflow review showing issues and fixes"
+                  width={600}
+                  height={400}
+                  className="rounded-xl"
+                  priority
+                />
+                {/* Floating accent card */}
+                <div className="absolute -bottom-4 -left-4 rounded-xl border border-white/20 bg-[#09090b]/90 px-4 py-3 shadow-xl backdrop-blur-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
+                      <Check className="h-4 w-4 text-green-400" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-white">3 issues found</p>
+                      <p className="text-xs text-gray-500">Auto-fix available</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -108,6 +149,86 @@ export default function Home() {
             <span className="text-2xl font-bold text-gray-500 transition-colors hover:text-white md:text-3xl">Airtable</span>
             <span className="text-2xl font-bold text-gray-500 transition-colors hover:text-white md:text-3xl">Notion</span>
           </div>
+        </div>
+      </section>
+
+      {/* SEE IT IN ACTION - New Tabbed Screenshot Section */}
+      <section className="relative z-10 px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-12 text-center">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-gray-600">Product Preview</p>
+            <h2 className="font-[family-name:var(--font-jetbrains-mono)] text-3xl font-bold text-white md:text-4xl">
+              See WorkflowTest In Action
+            </h2>
+          </div>
+
+          <Tabs defaultValue="find-issues" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 bg-white/5 border border-white/10 rounded-xl p-1 mb-8">
+              <TabsTrigger
+                value="find-issues"
+                className="rounded-lg data-[state=active]:bg-white data-[state=active]:text-black text-gray-400 transition-all"
+              >
+                Find Issues
+              </TabsTrigger>
+              <TabsTrigger
+                value="auto-fix"
+                className="rounded-lg data-[state=active]:bg-white data-[state=active]:text-black text-gray-400 transition-all"
+              >
+                Auto-Fix
+              </TabsTrigger>
+              <TabsTrigger
+                value="track-quality"
+                className="rounded-lg data-[state=active]:bg-white data-[state=active]:text-black text-gray-400 transition-all"
+              >
+                Track Quality
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="find-issues" className="mt-0">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-3 md:p-4 shadow-2xl shadow-white/5">
+                <Image
+                  src="/screenshots/review-results.png"
+                  alt="AI-powered workflow review showing detected issues"
+                  width={1200}
+                  height={700}
+                  className="rounded-xl w-full"
+                />
+              </div>
+              <p className="text-center mt-4 text-sm text-gray-500">
+                AI analyzes every step of your workflow and identifies potential issues
+              </p>
+            </TabsContent>
+
+            <TabsContent value="auto-fix" className="mt-0">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-3 md:p-4 shadow-2xl shadow-white/5">
+                <Image
+                  src="/screenshots/auto-fix-diff.png"
+                  alt="Before and after diff view of auto-fix suggestions"
+                  width={1200}
+                  height={700}
+                  className="rounded-xl w-full"
+                />
+              </div>
+              <p className="text-center mt-4 text-sm text-gray-500">
+                See exactly what changes will be made with detailed before/after diff views
+              </p>
+            </TabsContent>
+
+            <TabsContent value="track-quality" className="mt-0">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-3 md:p-4 shadow-2xl shadow-white/5">
+                <Image
+                  src="/screenshots/dashboard.png"
+                  alt="Quality metrics dashboard showing workflow health"
+                  width={1200}
+                  height={700}
+                  className="rounded-xl w-full"
+                />
+              </div>
+              <p className="text-center mt-4 text-sm text-gray-500">
+                Track workflow quality metrics and improvements over time
+              </p>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
@@ -202,7 +323,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURES SECTION */}
+      {/* FEATURES SECTION with Thumbnails */}
       <section className="relative z-10 px-6 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
