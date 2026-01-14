@@ -90,10 +90,9 @@ export default function Home() {
                 Now in Early Access
               </Badge>
 
-              <h1 className="font-[family-name:var(--font-jetbrains-mono)] text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                <span className="gradient-text-orange">AI Workflow Review</span>
-                <br />
-                <span className="text-slate-50">for Automation Tools</span>
+              <h1 className="font-[family-name:var(--font-jetbrains-mono)] tracking-tight">
+                <span className="block text-4xl font-bold text-slate-50 sm:text-5xl md:text-6xl lg:text-7xl">AI Workflow Review</span>
+                <span className="block text-3xl font-semibold gradient-text-orange mt-2 sm:text-4xl md:text-5xl lg:text-6xl">for Automation Tools</span>
               </h1>
 
               <p className="mx-auto lg:mx-0 mt-6 max-w-2xl text-sm text-slate-400 sm:text-base md:text-lg px-4 sm:px-0">
@@ -130,7 +129,7 @@ export default function Home() {
                   alt="AI workflow review showing issues and fixes"
                   width={600}
                   height={400}
-                  className="rounded-xl"
+                  className="rounded-xl border border-slate-700 opacity-95 hover:opacity-100 transition-opacity duration-300"
                   priority
                 />
                 {/* Floating accent card */}
@@ -200,13 +199,13 @@ export default function Home() {
             </TabsList>
 
             <TabsContent value="find-issues" className="mt-0">
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-3 md:p-4 shadow-2xl">
+              <div className="rounded-2xl border border-slate-700 bg-slate-900/50 p-3 md:p-4 shadow-2xl shadow-black/50">
                 <Image
                   src="/screenshots/review-results.png"
                   alt="AI-powered workflow review showing detected issues"
                   width={1200}
                   height={700}
-                  className="rounded-xl w-full"
+                  className="rounded-xl w-full border border-slate-700 opacity-95 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
               <p className="text-center mt-4 text-sm text-slate-500">
@@ -215,13 +214,13 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="auto-fix" className="mt-0">
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-3 md:p-4 shadow-2xl">
+              <div className="rounded-2xl border border-slate-700 bg-slate-900/50 p-3 md:p-4 shadow-2xl shadow-black/50">
                 <Image
                   src="/screenshots/auto-fix-diff.png"
                   alt="Before and after diff view of auto-fix suggestions"
                   width={1200}
                   height={700}
-                  className="rounded-xl w-full"
+                  className="rounded-xl w-full border border-slate-700 opacity-95 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
               <p className="text-center mt-4 text-sm text-slate-500">
@@ -230,13 +229,13 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="track-quality" className="mt-0">
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-3 md:p-4 shadow-2xl">
+              <div className="rounded-2xl border border-slate-700 bg-slate-900/50 p-3 md:p-4 shadow-2xl shadow-black/50">
                 <Image
                   src="/screenshots/dashboard.png"
                   alt="Quality metrics dashboard showing workflow health"
                   width={1200}
                   height={700}
-                  className="rounded-xl w-full"
+                  className="rounded-xl w-full border border-slate-700 opacity-95 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
               <p className="text-center mt-4 text-sm text-slate-500">
@@ -362,66 +361,66 @@ export default function Home() {
             <div className="group rounded-2xl border border-slate-800 bg-transparent p-6 transition-all card-hover-orange">
               <Search className="mb-4 h-8 w-8 text-slate-400 group-hover:text-orange-400 transition-colors" />
               <h4 className="mb-2 text-lg font-semibold text-slate-50">Deep Analysis</h4>
-              <ul className="space-y-1.5 text-sm text-slate-500">
-                <li>• Logic errors detection</li>
-                <li>• Missing error handlers</li>
-                <li>• Data type mismatches</li>
-                <li>• Inefficient routing</li>
+              <ul className="space-y-1.5 text-sm text-slate-400">
+                <li><span className="text-orange-500 mr-2">•</span>Logic errors detection</li>
+                <li><span className="text-orange-500 mr-2">•</span>Missing error handlers</li>
+                <li><span className="text-orange-500 mr-2">•</span>Data type mismatches</li>
+                <li><span className="text-orange-500 mr-2">•</span>Inefficient routing</li>
               </ul>
             </div>
 
             <div className="group rounded-2xl border border-slate-800 bg-transparent p-6 transition-all card-hover-orange">
               <Bot className="mb-4 h-8 w-8 text-slate-400 group-hover:text-orange-400 transition-colors" />
               <h4 className="mb-2 text-lg font-semibold text-slate-50">Auto-Fix</h4>
-              <ul className="space-y-1.5 text-sm text-slate-500">
-                <li>• AI generates corrected workflow</li>
-                <li>• Before/after diff view</li>
-                <li>• One-click download</li>
-                <li>• Direct push to Make/n8n</li>
+              <ul className="space-y-1.5 text-sm text-slate-400">
+                <li><span className="text-orange-500 mr-2">•</span>AI generates corrected workflow</li>
+                <li><span className="text-orange-500 mr-2">•</span>Before/after diff view</li>
+                <li><span className="text-orange-500 mr-2">•</span>One-click download</li>
+                <li><span className="text-orange-500 mr-2">•</span>Direct push to Make/n8n</li>
               </ul>
             </div>
 
             <div className="group rounded-2xl border border-slate-800 bg-transparent p-6 transition-all card-hover-orange">
               <Gauge className="mb-4 h-8 w-8 text-slate-400 group-hover:text-orange-400 transition-colors" />
               <h4 className="mb-2 text-lg font-semibold text-slate-50">Fast Reviews</h4>
-              <ul className="space-y-1.5 text-sm text-slate-500">
-                <li>• Results in &lt; 30 seconds</li>
-                <li>• Step-by-step feedback</li>
-                <li>• Actionable suggestions</li>
-                <li>• No manual checking</li>
+              <ul className="space-y-1.5 text-sm text-slate-400">
+                <li><span className="text-orange-500 mr-2">•</span>Results in &lt; 30 seconds</li>
+                <li><span className="text-orange-500 mr-2">•</span>Step-by-step feedback</li>
+                <li><span className="text-orange-500 mr-2">•</span>Actionable suggestions</li>
+                <li><span className="text-orange-500 mr-2">•</span>No manual checking</li>
               </ul>
             </div>
 
             <div className="group rounded-2xl border border-slate-800 bg-transparent p-6 transition-all card-hover-orange">
               <Link2 className="mb-4 h-8 w-8 text-slate-400 group-hover:text-orange-400 transition-colors" />
               <h4 className="mb-2 text-lg font-semibold text-slate-50">Direct Integration</h4>
-              <ul className="space-y-1.5 text-sm text-slate-500">
-                <li>• Connect Make.com account</li>
-                <li>• Connect n8n (Cloud + self-hosted)</li>
-                <li>• Auto-fetch workflows</li>
-                <li>• Auto-apply fixes</li>
+              <ul className="space-y-1.5 text-sm text-slate-400">
+                <li><span className="text-orange-500 mr-2">•</span>Connect Make.com account</li>
+                <li><span className="text-orange-500 mr-2">•</span>Connect n8n (Cloud + self-hosted)</li>
+                <li><span className="text-orange-500 mr-2">•</span>Auto-fetch workflows</li>
+                <li><span className="text-orange-500 mr-2">•</span>Auto-apply fixes</li>
               </ul>
             </div>
 
             <div className="group rounded-2xl border border-slate-800 bg-transparent p-6 transition-all card-hover-orange">
               <BarChart3 className="mb-4 h-8 w-8 text-slate-400 group-hover:text-orange-400 transition-colors" />
               <h4 className="mb-2 text-lg font-semibold text-slate-50">Quality Metrics</h4>
-              <ul className="space-y-1.5 text-sm text-slate-500">
-                <li>• Workflow complexity score</li>
-                <li>• Error probability rating</li>
-                <li>• Best practice compliance</li>
-                <li>• Trend tracking</li>
+              <ul className="space-y-1.5 text-sm text-slate-400">
+                <li><span className="text-orange-500 mr-2">•</span>Workflow complexity score</li>
+                <li><span className="text-orange-500 mr-2">•</span>Error probability rating</li>
+                <li><span className="text-orange-500 mr-2">•</span>Best practice compliance</li>
+                <li><span className="text-orange-500 mr-2">•</span>Trend tracking</li>
               </ul>
             </div>
 
             <div className="group rounded-2xl border border-slate-800 bg-transparent p-6 transition-all card-hover-orange">
               <UsersRound className="mb-4 h-8 w-8 text-slate-400 group-hover:text-orange-400 transition-colors" />
               <h4 className="mb-2 text-lg font-semibold text-slate-50">Team Reviews</h4>
-              <ul className="space-y-1.5 text-sm text-slate-500">
-                <li>• Share workflows with team</li>
-                <li>• Collaborative feedback</li>
-                <li>• Approval workflows</li>
-                <li>• Activity history</li>
+              <ul className="space-y-1.5 text-sm text-slate-400">
+                <li><span className="text-orange-500 mr-2">•</span>Share workflows with team</li>
+                <li><span className="text-orange-500 mr-2">•</span>Collaborative feedback</li>
+                <li><span className="text-orange-500 mr-2">•</span>Approval workflows</li>
+                <li><span className="text-orange-500 mr-2">•</span>Activity history</li>
               </ul>
             </div>
           </div>
@@ -440,20 +439,20 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-800">
+          <div className="overflow-hidden rounded-2xl border border-slate-700 shadow-[0_0_30px_rgba(249,115,22,0.1)]">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-slate-800 bg-slate-900">
+                <tr className="border-b border-slate-700 bg-slate-900">
                   <th className="px-4 py-4 text-left text-sm font-medium text-slate-400 md:px-6">Task</th>
                   <th className="px-4 py-4 text-center text-sm font-medium text-slate-500 md:px-6">Manual</th>
-                  <th className="px-4 py-4 text-center text-sm font-medium text-orange-400 md:px-6 bg-slate-800/50">FlowFox</th>
+                  <th className="px-4 py-4 text-center text-sm font-medium text-orange-400 md:px-6 bg-[#0F172A] border-l border-orange-500/20">FlowFox</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800">
+              <tbody className="divide-y divide-slate-700">
                 <tr>
                   <td className="px-4 py-4 text-sm text-slate-50 md:px-6">Review time</td>
                   <td className="px-4 py-4 text-center text-sm text-slate-500 md:px-6">30-60 min</td>
-                  <td className="px-4 py-4 text-center text-sm font-medium text-orange-400 md:px-6 bg-slate-800/50">&lt; 30 sec</td>
+                  <td className="px-4 py-4 text-center text-sm font-medium text-orange-400 md:px-6 bg-[#0F172A] border-l border-orange-500/20">&lt; 30 sec</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-4 text-sm text-slate-50 md:px-6">Find logic errors</td>
@@ -462,7 +461,7 @@ export default function Home() {
                       <X className="h-4 w-4" /> Miss 40%
                     </span>
                   </td>
-                  <td className="px-4 py-4 text-center md:px-6 bg-slate-800/50">
+                  <td className="px-4 py-4 text-center md:px-6 bg-[#0F172A] border-l border-orange-500/20">
                     <span className="inline-flex items-center gap-1 text-sm text-green-400">
                       <Check className="h-4 w-4" /> Catch 95%
                     </span>
@@ -475,7 +474,7 @@ export default function Home() {
                       <X className="h-4 w-4" /> Manual
                     </span>
                   </td>
-                  <td className="px-4 py-4 text-center md:px-6 bg-slate-800/50">
+                  <td className="px-4 py-4 text-center md:px-6 bg-[#0F172A] border-l border-orange-500/20">
                     <span className="inline-flex items-center gap-1 text-sm text-green-400">
                       <Check className="h-4 w-4" /> Auto-generated
                     </span>
@@ -488,7 +487,7 @@ export default function Home() {
                       <X className="h-4 w-4" /> Hours
                     </span>
                   </td>
-                  <td className="px-4 py-4 text-center md:px-6 bg-slate-800/50">
+                  <td className="px-4 py-4 text-center md:px-6 bg-[#0F172A] border-l border-orange-500/20">
                     <span className="inline-flex items-center gap-1 text-sm text-green-400">
                       <Check className="h-4 w-4" /> One-click
                     </span>
@@ -501,7 +500,7 @@ export default function Home() {
                       <X className="h-4 w-4" /> None
                     </span>
                   </td>
-                  <td className="px-4 py-4 text-center md:px-6 bg-slate-800/50">
+                  <td className="px-4 py-4 text-center md:px-6 bg-[#0F172A] border-l border-orange-500/20">
                     <span className="inline-flex items-center gap-1 text-sm text-green-400">
                       <Check className="h-4 w-4" /> Full audit
                     </span>
