@@ -112,8 +112,8 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                     <div className="relative flex-1">
                         <Label htmlFor="email" className="sr-only">Email</Label>
                         <div className={`
-                            flex items-stretch overflow-hidden rounded-lg border transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]
-                            ${formState === 'error' ? 'border-red-500/50 bg-red-500/5 shadow-[0_0_20px_rgba(239,68,68,0.2)]' : 'border-white/10 bg-white/5 focus-within:border-white/30 focus-within:shadow-[0_0_30px_rgba(255,255,255,0.15)]'}
+                            flex items-stretch overflow-hidden rounded-lg border transition-all shadow-[0_0_20px_rgba(249,115,22,0.1)]
+                            ${formState === 'error' ? 'border-red-500/50 bg-red-500/5 shadow-[0_0_20px_rgba(239,68,68,0.2)]' : 'border-slate-700 bg-slate-900 focus-within:border-orange-500/50 focus-within:shadow-[0_0_30px_rgba(249,115,22,0.15)]'}
                         `}>
                             <Input
                                 id="email"
@@ -122,26 +122,26 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                                 value={email}
                                 onChange={handleEmailChange}
                                 disabled={formState === 'loading' || formState === 'success'}
-                                className="h-11 flex-1 border-0 bg-transparent px-3 text-sm text-white placeholder:text-gray-600 focus-visible:ring-0 focus-visible:ring-offset-0 disabled:opacity-50 sm:h-12 sm:px-4 sm:text-base"
+                                className="h-11 flex-1 border-0 bg-transparent px-3 text-sm text-slate-50 placeholder:text-slate-600 focus-visible:ring-0 focus-visible:ring-offset-0 disabled:opacity-50 sm:h-12 sm:px-4 sm:text-base"
                             />
 
                             {/* Tool Selection Inside Input */}
                             {showToolSelect && (
-                                <div className="flex items-center border-l border-white/10">
+                                <div className="flex items-center border-l border-slate-700">
                                     <Select
                                         value={tool}
                                         onValueChange={setTool}
                                         disabled={formState === 'loading' || formState === 'success'}
                                     >
-                                        <SelectTrigger className="h-11 w-auto min-w-[80px] border-0 bg-transparent px-2 text-[10px] text-gray-500 shadow-none hover:text-gray-300 focus:ring-0 focus:ring-offset-0 data-[placeholder]:text-gray-500 sm:h-12 sm:min-w-[100px] sm:text-[11px]">
+                                        <SelectTrigger className="h-11 w-auto min-w-[80px] border-0 bg-transparent px-2 text-[10px] text-slate-500 shadow-none hover:text-slate-300 focus:ring-0 focus:ring-offset-0 data-[placeholder]:text-slate-500 sm:h-12 sm:min-w-[100px] sm:text-[11px]">
                                             <SelectValue placeholder="Tool" />
                                         </SelectTrigger>
-                                        <SelectContent className="bg-[#09090b] border-white/10">
-                                            <SelectItem value="make" className="text-white text-xs focus:bg-white/10 focus:text-white">Make</SelectItem>
-                                            <SelectItem value="n8n" className="text-white text-xs focus:bg-white/10 focus:text-white">n8n</SelectItem>
-                                            <SelectItem value="zapier" className="text-white text-xs focus:bg-white/10 focus:text-white">Zapier</SelectItem>
-                                            <SelectItem value="airtable" className="text-white text-xs focus:bg-white/10 focus:text-white">Airtable</SelectItem>
-                                            <SelectItem value="other" className="text-white text-xs focus:bg-white/10 focus:text-white">Other</SelectItem>
+                                        <SelectContent className="bg-slate-900 border-slate-700">
+                                            <SelectItem value="make" className="text-slate-50 text-xs focus:bg-orange-500/10 focus:text-orange-400">Make</SelectItem>
+                                            <SelectItem value="n8n" className="text-slate-50 text-xs focus:bg-orange-500/10 focus:text-orange-400">n8n</SelectItem>
+                                            <SelectItem value="zapier" className="text-slate-50 text-xs focus:bg-orange-500/10 focus:text-orange-400">Zapier</SelectItem>
+                                            <SelectItem value="airtable" className="text-slate-50 text-xs focus:bg-orange-500/10 focus:text-orange-400">Airtable</SelectItem>
+                                            <SelectItem value="other" className="text-slate-50 text-xs focus:bg-orange-500/10 focus:text-orange-400">Other</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
@@ -149,13 +149,13 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                         </div>
                     </div>
 
-                    {/* Submit Button */}
+                    {/* Submit Button - Foxfire Orange with Glow */}
                     <Button
                         type="submit"
                         disabled={formState === 'loading' || formState === 'success'}
                         className={`relative h-11 w-full overflow-hidden rounded-lg px-4 text-xs font-medium transition-all duration-300 sm:h-12 sm:w-auto sm:px-6 sm:text-sm ${formState === 'success'
-                            ? 'bg-gray-800 text-white border border-white/10'
-                            : 'bg-white text-black hover:bg-gray-200'
+                            ? 'bg-slate-800 text-slate-50 border border-slate-700'
+                            : 'bg-orange-600 text-white hover:bg-orange-500 shadow-[0_0_15px_rgba(234,88,12,0.5)] hover:shadow-[0_0_25px_rgba(234,88,12,0.6)]'
                             }`}
                     >
                         {formState === 'loading' && (
@@ -166,8 +166,8 @@ export function WaitlistForm({ className = '', showToolSelect = true }: Waitlist
                         )}
                         {formState === 'success' && (
                             <span className="flex items-center gap-2">
-                                <CircleCheck className="h-5 w-5 text-white animate-[check-pop_0.4s_ease-out]" />
-                                <span className="text-white">You&apos;re on the list!</span>
+                                <CircleCheck className="h-5 w-5 text-green-400 animate-[check-pop_0.4s_ease-out]" />
+                                <span className="text-slate-50">You&apos;re on the list!</span>
                             </span>
                         )}
                         {(formState === 'error' || formState === 'default') && 'Join Waitlist'}
